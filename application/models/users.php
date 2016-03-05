@@ -9,10 +9,12 @@ class Users extends CI_Model {
 
     function isUserPresent($where_filters) {
 
-        $this->db->select('id')->from('user')->where($where_filters);
+        $this->db->select('id ,username, first_name, last_name')->from('user')->where($where_filters);
 
         $query = $this->db->get();
 
-        return $query->num_rows;
+        if($query->num_rows() > 0) {
+            return $query->result();
+	    }
     }
 }

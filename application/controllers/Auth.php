@@ -2,10 +2,9 @@
 
 class Auth extends CI_Controller {
 
-	public function login()
-	{
+	public function login() {
         $post = $this->input->post();
-
+        
         if ($post) {
 
             if(isset($post['username']) && isset($post['password'])) {
@@ -15,7 +14,17 @@ class Auth extends CI_Controller {
 
                 $this->load->model('users');
                 $isUserPresent = $this->users->isUserPresent($where);
-                var_dump($isUserPresent);
+
+                if($isUserPresent) {
+                    $userInfo = array (
+                                        'id' => $isUserPresent[0]->id,
+                                        'username' => $isUserPresent[0]->username,
+                                        'first_name' => $isUserPresent[0]->first_name,
+                                        'last_name' => $isUserPresent[0]->last_name
+                                    );
+                    $this->session->set_userdata('user', $userInfo);
+                    redirect(base_url('Dashboard'));
+                }
             }
         }
 
@@ -23,4 +32,9 @@ class Auth extends CI_Controller {
         $this->load->view('Auth/login');
         $this->load->view('footer');
 	}
+
+    public function logout() {
+        $this->session->sess_destroy();
+        redirect(base_url('Auth/login'));
+    }
 }
