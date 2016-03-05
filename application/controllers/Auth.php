@@ -19,9 +19,8 @@ class Auth extends CI_Controller {
             }
         }
 
-        $data['hello'] = "Hello World!!!!";
 		$this->load->view('header');
-        $this->load->view('Auth/login', $data);
+        $this->load->view('Auth/login');
         $this->load->view('footer');
 	}
 }

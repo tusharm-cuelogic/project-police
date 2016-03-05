@@ -9,11 +9,11 @@
 	<title>
 		Project Police
 	</title>
-	
+
 	<link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="../../assets/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="../../assets/css/theme.css">
-	
+
 	<script src="../../assets/js/jquery.min.js"></script>
 	<script src="../../assets/js/bootstrap.min.js"></script>
 </head>
@@ -27,20 +27,23 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Home</a>
+                <a class="navbar-brand" href="#">PST</a>
             </div>
-            
+
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">Dashboard</a>
+                    </li>
                     <li>
 						<a href="#">Login</a>
 					</li>
 					<li>
-						<a href="#">Signup</a>
+						<a href="#">Logout</a>
 					</li>
 				</ul>
             </div>
-            
+
         </div>
     </div>
     <div class="container theme-showcase" role="main">

@@ -1,8 +1,18 @@
+html{
+    height: 100%;
+}
 body {
   padding-top: 70px;
   padding-bottom: 30px;
+  position: relative;
+  min-height: 100%;
 }
-
+.align-center{
+    text-align: center;
+}
+.margin-none{
+    margin: 0;
+}
 .theme-dropdown .dropdown-menu {
   position: static;
   display: block;
@@ -15,4 +25,26 @@ body {
 
 .theme-showcase .navbar .container {
   width: auto;
+}
+.marginTop15{
+    margin-top: 15px;
+}
+.navbar-inverse{
+    background-color: #ca3a38;
+    background-image:none;
+}
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a{
+    color: #fff;
+}
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-nav>li>a:hover{
+    color: #000;
+    text-shadow:none;
+}
+footer{
+    position: absolute;
+    left:0;
+    bottom:0;
+    right:0;
+    background:#B3B1B2;
+    padding: 10px;
 }

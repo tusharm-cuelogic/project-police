@@ -4,7 +4,7 @@
         <form action="" method="post">
         <div class="row">
             <div class="col-md-6">
-                <input type='text' id='id_username' name='username' class='form-control' placeholder='Username' required />
+                <input type='email' id='id_username' name='username' class='form-control' placeholder='Username' required />
             </div>
             <div class='col-md-6'>
                 <input type='password' id='id_password' name='password' class='form-control' placeholder='Password' required />

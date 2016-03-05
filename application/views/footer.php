@@ -1,9 +1,8 @@
 
 </div>
 
-	<hr>
 	<footer>
-	    <p class="pull-right"><a href="#">Copyright © 2016 Project Police</a></p>
+	    <p class="align-center margin-none">Copyright © 2016 PST</p>
 	</footer>
 	</div>
 </body>
