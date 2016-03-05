@@ -1,14 +1,17 @@
-<h1 class="page-title">Log in to project</h1>
-<div class="form-wrapper">
-  <form class="form-content" name="loginform" id="loginform" method="POST">
-    <div class="input-wrapper">
-      <span class="input input--madoka">
-        <input class="input__field input__field--madoka" type="email" name="username" id="username" />
+<div class="jumbotron">
+    <h1 align='center'>Login</h1>
+    <div class='container' style='padding-top:10px'>
+        <form action="" method="post">
+        <div class="row">
+            <div class="col-md-6">
+                <input type='text' id='id_username' name='username' class='form-control' placeholder='Username' required />
+            </div>
+            <div class='col-md-6'>
+                <input type='password' id='id_password' name='password' class='form-control' placeholder='Password' required />
+            </div>
+        </div>
+        <br>
+        <input type="submit" value="Login" class='btn btn-primary btn-lg btn-block' />
+        </form>
     </div>
-    <div class="input-wrapper">
-      <span class="input input--madoka">
-        <input class="input__field input__field--madoka" type="password" name="password" id="password" required ng-minlength="6"/>
-    </div>
-    <button type="submit" class="btn btn-primary btn-login">Login</button>
-  </form>
 </div>
