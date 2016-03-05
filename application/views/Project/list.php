@@ -28,7 +28,7 @@
         <?php }
             } else  { ?>
                 <tr>
-                    <td>Project not found.</td>
+                    <td class="danger text-center" colspan="4">Project not found.</td>
                 </tr>
             <?php
             }

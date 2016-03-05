@@ -47,7 +47,13 @@
 					</li>
 				</ul>
             </div>
-
         </div>
     </div>
+    <?php if($alertDanger) { ?>
+    <div class="header-message-wrap alert <?php echo $alertDanger; ?>">
+        <?php echo $msg; ?>
+    </div>
+    <?php
+    }
+    ?>
     <div class="container theme-showcase" role="main">

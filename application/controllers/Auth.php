@@ -3,6 +3,10 @@
 class Auth extends CI_Controller {
 
 	public function login() {
+        $setMsgValue = array();
+        $setMsgValue['alertDanger'] = '';
+        $setMsgValue['msg'] = '';
+
         $post = $this->input->post();
 
         if ($post) {
@@ -24,11 +28,14 @@ class Auth extends CI_Controller {
                                     );
                     $this->session->set_userdata('user', $userInfo);
                     redirect(base_url('Dashboard/home'));
+                } else {
+                    $setMsgValue['alertDanger'] = 'alert-danger';
+                    $setMsgValue['msg'] = 'Incorrect Username and Password.';
                 }
             }
         }
 
-		$this->load->view('header');
+		$this->load->view('header', $setMsgValue);
         $this->load->view('Auth/login');
         $this->load->view('footer');
 	}

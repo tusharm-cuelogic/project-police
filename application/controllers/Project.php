@@ -4,6 +4,9 @@ class Project extends CI_Controller {
 
 	public function view() {
         $arrSetData = array();
+        $setMsgValue = array();
+        $setMsgValue['alertDanger'] = '';
+        $setMsgValue['msg'] = '';
 
         $this->load->model('projects');
         $projectDetails = $this->projects->getProjectList();
@@ -12,14 +15,16 @@ class Project extends CI_Controller {
             $arrSetData['setProjectDetails'] = $projectDetails;
         }
 
-/*print"<pre>";
-print_r($arrSetData);exit;*/
-		$this->load->view('header');
+		$this->load->view('header', $setMsgValue);
         $this->load->view('Project/list', $arrSetData);
         $this->load->view('footer');
 	}
 
     public function add() {
+
+        $setMsgValue = array();
+        $setMsgValue['alertDanger'] = '';
+        $setMsgValue['msg'] = '';
 
         if (!(int)$this->session->userdata('user')['id'] > 0) {
             redirect(base_url('Auth/login'));
@@ -36,7 +41,7 @@ print_r($arrSetData);exit;*/
             }
         }
 
-        $this->load->view('header');
+        $this->load->view('header', $setMsgValue);
         $this->load->view('Project/addedit');
         $this->load->view('footer');
     }

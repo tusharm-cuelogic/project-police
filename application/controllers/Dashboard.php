@@ -4,7 +4,11 @@ class Dashboard extends CI_Controller {
 
 	public function home()
 	{
-		$this->load->view('header');
+        $setMsgValue = array();
+        $setMsgValue['alertDanger'] = '';
+        $setMsgValue['msg'] = '';
+
+		$this->load->view('header', $setMsgValue);
         $this->load->view('Dashboard/dashboard');
         $this->load->view('footer');
 	}
