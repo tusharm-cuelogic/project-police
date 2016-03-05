@@ -103,7 +103,7 @@ if (isset($_SERVER['KOHANA_ENV']))
  * - boolean  expose      set the X-Powered-By header                        FALSE
  */
 Kohana::init(array(
-	'base_url'   => '/kohana/',
+	'base_url'   => '/project-police/',
 ));
 
 /**
@@ -134,7 +134,7 @@ Kohana::modules(array(
 /**
  * Cookie Salt
  * @see  http://kohanaframework.org/3.3/guide/kohana/cookies
- * 
+ *
  * If you have not defined a cookie salt in your Cookie class then
  * uncomment the line below and define a preferrably long salt.
  */
@@ -149,3 +149,5 @@ Route::set('default', '(<controller>(/<action>(/<id>)))')
 		'controller' => 'welcome',
 		'action'     => 'index',
 	));
+
+Kohana_Cookie::$salt = md5('454f4f5dsf4sd54sd5f4sdf1ds5fds65f4sdf4ds1f35ds4f68');
