@@ -364,7 +364,7 @@ $config['rewrite_short_tags'] = FALSE;
 |
 */
 $config['proxy_ips'] = '';
-
+define('BASE_URL', $config['base_url']);
 
 /* End of file config.php */
 /* Location: ./application/config/config.php */

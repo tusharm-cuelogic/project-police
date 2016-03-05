@@ -23,7 +23,7 @@
             <th scope="row"><?php echo $projectValue->repository_name; ?></th>
             <td><?php echo $projectValue->commit_errors; ?></td>
             <td><?php echo date('F j, Y', strtotime($projectValue->created)); ?></td>
-            <td><a href="<?php echo base_url();?>Project/add/<?php echo $projectValue->id; ?>"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a></td>
+            <td><a href="<?php echo base_url();?>Project/add?id=<?php echo base64_encode($projectValue->id); ?>"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a></td>
         </tr>
         <?php }
             } else  { ?>
