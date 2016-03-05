@@ -3,8 +3,19 @@
 class Project extends CI_Controller {
 
 	public function view() {
+        $arrSetData = array();
+
+        $this->load->model('projects');
+        $projectDetails = $this->projects->getProjectList();
+
+        if(is_array($projectDetails)) {
+            $arrSetData['setProjectDetails'] = $projectDetails;
+        }
+
+/*print"<pre>";
+print_r($arrSetData);exit;*/
 		$this->load->view('header');
-        $this->load->view('Project/list');
+        $this->load->view('Project/list', $arrSetData);
         $this->load->view('footer');
 	}
 

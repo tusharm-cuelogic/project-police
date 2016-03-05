@@ -16,4 +16,15 @@ class Projects extends CI_Model {
 
         return (int)$lastid;
     }
+
+    function getProjectList() {
+
+        $this->db->select('id ,created, repository_name, repository_type, commit_errors')->from('project');
+
+        $query = $this->db->get();
+
+        if($query->num_rows() > 0) {
+            return $query->result();
+        }
+    }
 }
