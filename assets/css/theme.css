@@ -29,8 +29,15 @@ body {
 .marginTop15{
     margin-top: 15px;
 }
+.login-wrap{
+    width: 400px;
+    margin: 0 auto;
+    background: #DCDDD8;
+    border-radius: 10px;
+    padding: 0 20px 20px;
+}
 .navbar-inverse{
-    background-color: #ca3a38;
+    background-color: #4D6076;
     background-image:none;
 }
 .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a{

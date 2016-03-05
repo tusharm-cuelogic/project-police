@@ -13,9 +13,6 @@
 	<link rel="stylesheet" href="../../assets/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="../../assets/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="../../assets/css/theme.css">
-
-	<script src="../../assets/js/jquery.min.js"></script>
-	<script src="../../assets/js/bootstrap.min.js"></script>
 </head>
 <body role="document">
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -31,15 +28,22 @@
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <?php
+                    $arrUserData = $this->session->userdata('user');
+                    $strShowPrivate = 'hide';
+                    if(is_array($arrUserData)) {
+                        $strShowPrivate = 'show';
+                    }
+                ?>
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#">Dashboard</a>
+                    <li class='<?php echo $strShowPrivate ?>' >
+                        <a href="<?php echo base_url();?>Dashboard/home">Dashboard</a>
                     </li>
-                    <li>
-						<a href="#">Login</a>
-					</li>
-					<li>
-						<a href="#">Logout</a>
+                    <li class='<?php echo $strShowPrivate ?>' >
+                        <a href="<?php echo base_url();?>Project/view">Project List</a>
+                    </li>
+					<li class='<?php echo $strShowPrivate ?>'>
+						<a href="<?php echo base_url();?>Auth/logout">Logout</a>
 					</li>
 				</ul>
             </div>

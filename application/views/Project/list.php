@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <h3 class="pull-left">Project list</h3>
-            <a href="#" class="btn btn-primary pull-right marginTop15"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add project</a>
+            <a href="<?php echo base_url();?>Project/addedit" class="btn btn-primary pull-right marginTop15"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add project</a>
         </div>
     </div>
     <hr class="clearfix" />

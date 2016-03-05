@@ -4,7 +4,7 @@ class Auth extends CI_Controller {
 
 	public function login() {
         $post = $this->input->post();
-        
+
         if ($post) {
 
             if(isset($post['username']) && isset($post['password'])) {
@@ -23,7 +23,7 @@ class Auth extends CI_Controller {
                                         'last_name' => $isUserPresent[0]->last_name
                                     );
                     $this->session->set_userdata('user', $userInfo);
-                    redirect(base_url('Dashboard'));
+                    redirect(base_url('Dashboard/home'));
                 }
             }
         }
