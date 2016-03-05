@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <h3 class="pull-left">Project list</h3>
-            <a href="<?php echo base_url();?>Project/addedit" class="btn btn-primary pull-right marginTop15"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add project</a>
+            <a href="<?php echo base_url();?>Project/add" class="btn btn-primary pull-right marginTop15"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add project</a>
         </div>
     </div>
     <hr class="clearfix" />
@@ -16,24 +16,23 @@
     </tr>
     </thead>
     <tbody>
+        <?php
+            if (is_array($setProjectDetails) && count($setProjectDetails) > 0) {
+                foreach($setProjectDetails as $projectKey => $projectValue) { ?>
         <tr>
-            <th scope="row">1</th>
-            <td>Last commit</td>
-            <td>03/01/2016</td>
-            <td><a href="javascript:void(0);"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a></td>
+            <th scope="row"><?php echo $projectValue->repository_name; ?></th>
+            <td><?php echo $projectValue->commit_errors; ?></td>
+            <td><?php echo date('F j, Y', strtotime($projectValue->created)); ?></td>
+            <td><a href="<?php echo base_url();?>Project/add/<?php echo $projectValue->id; ?>"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a></td>
         </tr>
-        <tr>
-            <th scope="row">1</th>
-            <td>Last commit</td>
-            <td>03/01/2016</td>
-            <td><a href="javascript:void(0);"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a></td>
-        </tr>
-        <tr>
-            <th scope="row">1</th>
-            <td>Last commit</td>
-            <td>03/01/2016</td>
-            <td><a href="javascript:void(0);"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a></td>
-        </tr>
+        <?php }
+            } else  { ?>
+                <tr>
+                    <td>Project not found.</td>
+                </tr>
+            <?php
+            }
+        ?>
     </tbody>
     </table>
 </div>
