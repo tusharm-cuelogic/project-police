@@ -11,6 +11,8 @@ class Codereview extends CI_Controller {
         $this->load->library('Symphony/Symphony');
         if (strstr($filePath['file_path'], "models")) {
         	$modelResponse = $this->symphony->validateModel(array('file_type' => 'model', 'file_path' => $filePath['file_path']));
+        	$modelResponse = ($modelResponse !== "") ? '{"unwanted_module":1}' : '{"unwanted_module":0}';
+
         }
         
         if (strstr($filePath['file_path'], "controllers")) {
@@ -18,7 +20,6 @@ class Codereview extends CI_Controller {
         }
         
         // $duplicateResponse = $this->symphony->validateDuplicate(array('file_type' => 'duplicate_code', 'file_path' => $filePath['file_path']));
-
         $output = array($modelResponse, $controllerResponse);
         print json_encode($output);
 	}

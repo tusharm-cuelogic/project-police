@@ -104,28 +104,32 @@ class Projects extends CI_Model {
     }
 
     function updateCommitInfo($result) {
+        #print_r($result);
         
         $resultResponse = json_decode($result);
         
+        #print_r($resultResponse);
         $projectid = (int)base64_decode($this->input->get()['id']);
-        $modelResponse = json_decode($resultResponse[0]);
-        $contorllerResponse = json_decode($resultResponse[1]);
+        $modelResponse = ($resultResponse[0] != "") ? json_decode($resultResponse[0]) : 0;
+        $contorllerResponse = ($resultResponse[1] != "") ? json_decode($resultResponse[1]) : 0;
 
         $updateData = array(
-                "wrong_action" => (int)$contorllerResponse->duplicate_return,
-                "query_count" => (int)$contorllerResponse->queries_in_controller,
-                "unwanted_module" => (int)$contorllerResponse->queries_in_controller,
+                "wrong_action" => ($contorllerResponse) ? (int)$contorllerResponse->duplicate_return : 0,
+                "query_count" => ($contorllerResponse) ? (int)$contorllerResponse->queries_in_controller : 0,
+                "unwanted_module" => ($modelResponse) ? (int)$modelResponse->unwanted_module : 0,
             );
         
-        $query = $this->db->update_string(
-            'commits', $arrSetValue,
-            "projectid = '$projectid'");
-        $result = $this->db->query($query);
-
-        $query = $this->db->update_string(
-            'project', $arrSetValue,
-            "id = '$projectid'");
-        $result = $this->db->query($query);
+        $totalCount = $updateData["wrong_action"] + $updateData["query_count"] + $updateData["unwanted_module"];
+        
+        // $query = $this->db->update_string(
+        //     'commits', $arrSetValue,
+        //     "projectid = '$projectid'");
+        // $result = $this->db->query($query);
+        
+        $UpdateQuery = "UPDATE project 
+                        SET commit_errors = commit_errors + $totalCount
+                        WHERE id = $projectid";
+        $result = $this->db->query($UpdateQuery);
     }
 
 }
