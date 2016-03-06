@@ -9,8 +9,29 @@ class Projects extends CI_Model {
 
     function add() {
 
+        $arrSetValue = array();
         $projectInfo = $this->input->post();
-        $sql = $this->db->insert_string('project', $projectInfo);
+
+
+        $arrSetValue = array(
+            'project_name' =>  $projectInfo['project_name'],
+            'repository_name' =>  $projectInfo['repository_name'],
+            'git_url' =>  $projectInfo['git_url'],
+            'project_language' =>  $projectInfo['project_language'],
+            'project_framework' =>  $projectInfo['project_framework'],
+            'controller_directory' =>  $projectInfo['controller_directory'],
+            'model_directory' =>  $projectInfo['model_directory'],
+            'exclude_directory' =>  $projectInfo['exclude_directory'],
+            'repository_type' =>  $projectInfo['repository_type'],
+            'git_username' =>  $projectInfo['git_username'],
+            'git_password' =>  base64_encode($projectInfo['git_password']),
+        );
+        if ($projectInfo['repository_type'] == "public") {
+            $arrSetValue['git_username'] =  "";
+            $arrSetValue['git_password'] =  "";
+        }
+
+        $sql = $this->db->insert_string('project', $arrSetValue);
         $this->db->query($sql);
         $lastid = $this->db->insert_id();
 
@@ -30,8 +51,8 @@ class Projects extends CI_Model {
                         model_directory,
                         exclude_directory,
                         git_url,
-                        git_password 
-                from project 
+                        git_password
+                from project
                 where id='".$projectId."'";
         $result = $this->db->query($sql);
         if($result)return $result->result_array();
@@ -39,11 +60,30 @@ class Projects extends CI_Model {
 
     function edit() {
 
+        $arrSetValue = array();
         $projectInfo = $this->input->post();
         $projectId = base64_decode($this->input->get()['id']);
 
+        $arrSetValue = array(
+            'project_name' =>  $projectInfo['project_name'],
+            'repository_name' =>  $projectInfo['repository_name'],
+            'git_url' =>  $projectInfo['git_url'],
+            'project_language' =>  $projectInfo['project_language'],
+            'project_framework' =>  $projectInfo['project_framework'],
+            'controller_directory' =>  $projectInfo['controller_directory'],
+            'model_directory' =>  $projectInfo['model_directory'],
+            'exclude_directory' =>  $projectInfo['exclude_directory'],
+            'repository_type' =>  $projectInfo['repository_type'],
+            'git_username' =>  $projectInfo['git_username'],
+            'git_password' =>  base64_encode($projectInfo['git_password']),
+        );
+        if ($projectInfo['repository_type'] == "public") {
+            $arrSetValue['git_username'] =  "";
+            $arrSetValue['git_password'] =  "";
+        }
+
         $query = $this->db->update_string(
-            'project', $projectInfo,
+            'project', $arrSetValue,
             "id = '$projectId'");
         $result = $this->db->query($query);
 
@@ -63,29 +103,4 @@ class Projects extends CI_Model {
         }
     }
 
-    function addCommit($commitInfo) {
-        $sql = $this->db->insert_string('commits', $commitInfo);
-        $this->db->query($sql);
-        $lastid = $this->db->insert_id();
-
-        return (int)$lastid;
-    }
-
-    function checkCommitExists($projectid) {
-        $projectId = base64_decode($this->input->get()['id']);
-        $sql = "select id from commits where projectid='".$projectId."'";
-        $result = $this->db->query($sql);
-        if($result)return $result->result_array();
-    }
-
-    function updateCommitInfo($commitInfo, $commitid) {
-        $query = $this->db->update_string(
-            'commits', $commitInfo,
-            "id = '$commitid'");
-        $result = $this->db->query($query);
-
-        if ($result) {
-            return $result;
-        }
-    }
 }

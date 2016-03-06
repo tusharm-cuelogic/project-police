@@ -6,7 +6,7 @@
         </div>
     </div>
     <hr class="clearfix" />
-    <table class="table table-striped table-hover">
+    <table class="table table-hover">
     <thead>
     <tr>
         <th>Name</th>
@@ -21,7 +21,7 @@
                 foreach($setProjectDetails as $projectKey => $projectValue) { ?>
         <tr>
             <th scope="row"><?php echo $projectValue->repository_name; ?></th>
-            <td><?php echo $projectValue->commit_errors; ?></td>
+            <td><?php echo ($projectValue->commit_errors) ? $projectValue->commit_errors : 0 ; ?></td>
             <td><?php echo date('F j, Y', strtotime($projectValue->created)); ?></td>
             <td><a href="<?php echo base_url();?>Project/add?id=<?php echo base64_encode($projectValue->id); ?>"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a></td>
         </tr>

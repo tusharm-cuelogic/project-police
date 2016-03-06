@@ -61,7 +61,7 @@
           </div>
           <div class="form-group col-md-6">
             <label>Git Password</label>
-            <input type="password" class="form-control" id="git_password" placeholder="" name="git_password" required value="<?php echo $info['git_password'];?>">
+            <input type="password" class="form-control" id="git_password" placeholder="" name="git_password" required value="<?php echo base64_decode($info['git_password']);?>">
           </div>
         </div>
       </div>
