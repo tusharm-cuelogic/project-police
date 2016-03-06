@@ -9,7 +9,11 @@ class Commits extends CI_Model {
 
     function getCommitsList($intProjectId) {
 
-        $sql = "SELECT pushid ,username, issue_count, pushed_date FROM commits WHERE projectid='".$intProjectId."' ORDER BY pushed_date DESC ";
+        $sql = "SELECT pushid, username, issue_count, pushed_date, duplicate_count,
+                        query_count, wrong_action, unwanted_module
+                FROM commits
+                WHERE projectid='".$intProjectId."'
+                ORDER BY pushed_date DESC ";
         $result = $this->db->query($sql);
         if($result)return $result->result_array();
     }

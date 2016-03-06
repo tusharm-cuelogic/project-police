@@ -5,6 +5,11 @@ $(document).ready(function() {
     $(window).resize(function() {
         loginLayout();
     });
+    $(".commit-table .toggle-details").each(function() {
+        $(this).click(function(){
+            $(this).find('.details').slideToggle('fast');
+        });
+    });
 });
 
 function loginLayout() {

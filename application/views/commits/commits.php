@@ -1,7 +1,7 @@
 <div class="container">
     <h3>Commits</h3>
     <hr/>
-    <table class="table table-hover">
+    <table class="table table-hover commit-table">
     <thead>
     <tr>
         <th>Commit Id</th>
@@ -15,7 +15,10 @@
             if (is_array($setCommitsDetails) && count($setCommitsDetails) > 0) {
                 foreach($setCommitsDetails as $commit) { ?>
         <tr>
-            <td><?php echo $commit['pushid']; ?></td>
+            <td class="toggle-details">
+                <div><?php echo $commit['pushid']; ?></div>
+                <div class="details" style="display: ;"><span>Duplicate <i>( <?php echo $commit['duplicate_count']; ?> )</i></span> <span>Queires <i>( <?php echo $commit['query_count']; ?> )</i></span><span>Wrong use of action <i>( <?php echo $commit['wrong_action']; ?> )</i></span><span> Unwanted methods in module <i>( <?php echo $commit['unwanted_module']; ?> )</i></span></div>
+            </td>
             <td><?php echo $commit['username']; ?></td>
             <td><?php echo ($commit['issue_count']) ? $commit['issue_count'] : 0; ?></td>
             <td><?php echo date('F j, Y', strtotime($commit['pushed_date'])); ?></td>

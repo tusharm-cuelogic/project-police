@@ -77,3 +77,20 @@ footer{
 .table thead th{
   background: #e3f0f4;
 }
+.toggle-details .details span{
+  padding: 0 8px;
+  color: #ac2925;
+  font-size: 12px;
+  border-right: 1px solid #666;
+}
+.toggle-details .details span:first-child{
+  padding-left:0;
+}
+.toggle-details .details span:last-child{
+  border:0;
+}
+.toggle-details .details span i{
+  font-style: normal;
+  padding: 0 0 0 4px;
+}
+
