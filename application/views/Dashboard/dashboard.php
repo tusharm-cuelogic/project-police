@@ -40,26 +40,28 @@
     <table class="table table-hover">
     <thead>
     <tr>
-        <th>Name</th>
-        <th>Last commit errors</th>
-        <th>Commit date</th>
-        <th>Action</th>
+        <th>Project Name</th>
+        <th>Commit Id</th>
+        <th>Username</th>
+        <th>Issue</th>
+        <th>Commit Date</th>
     </tr>
     </thead>
     <tbody>
         <?php
-            if (is_array($setProjectDetails) && count($setProjectDetails) > 0) {
-                foreach($setProjectDetails as $projectKey => $projectValue) { ?>
+            if (is_array($setCommitsDetails) && count($setCommitsDetails) > 0) {
+                foreach($setCommitsDetails as $commit) { ?>
         <tr>
-            <th scope="row"><?php echo $projectValue->repository_name; ?></th>
-            <td><?php echo $projectValue->commit_errors; ?></td>
-            <td><?php echo date('F j, Y', strtotime($projectValue->created)); ?></td>
-            <td><a href="<?php echo base_url();?>Project/add?id=<?php echo base64_encode($projectValue->id); ?>"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit</a></td>
+            <th scope="row"><a href="<?php echo base_url();?>Dashboard/commits?id=<?php echo base64_encode($commit['projectid']); ?>"><?php echo $commit['username']; ?></a></th>
+            <td><?php echo $commit['pushid']; ?></td>
+            <td><?php echo $commit['username']; ?></td>
+            <td><?php echo ($commit['issue_count']) ? $commit['issue_count'] : 0; ?></td>
+            <td><?php echo date('F j, Y', strtotime($commit['pushed_date'])); ?></td>
         </tr>
         <?php }
             } else  { ?>
                 <tr>
-                    <td class="danger text-center" colspan="4">Project not found.</td>
+                    <td class="danger text-center" colspan="4">Commits not found.</td>
                 </tr>
             <?php
             }

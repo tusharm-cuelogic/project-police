@@ -30,8 +30,8 @@ class Projects extends CI_Model {
                         model_directory,
                         exclude_directory,
                         git_url,
-                        git_password 
-                from project 
+                        git_password
+                from project
                 where id='".$projectId."'";
         $result = $this->db->query($sql);
         if($result)return $result->result_array();
@@ -63,29 +63,4 @@ class Projects extends CI_Model {
         }
     }
 
-    function addCommit($commitInfo) {
-        $sql = $this->db->insert_string('commits', $commitInfo);
-        $this->db->query($sql);
-        $lastid = $this->db->insert_id();
-
-        return (int)$lastid;
-    }
-
-    function checkCommitExists($projectid) {
-        $projectId = base64_decode($this->input->get()['id']);
-        $sql = "select id from commits where projectid='".$projectId."'";
-        $result = $this->db->query($sql);
-        if($result)return $result->result_array();
-    }
-
-    function updateCommitInfo($commitInfo, $commitid) {
-        $query = $this->db->update_string(
-            'commits', $commitInfo,
-            "id = '$commitid'");
-        $result = $this->db->query($query);
-
-        if ($result) {
-            return $result;
-        }
-    }
 }

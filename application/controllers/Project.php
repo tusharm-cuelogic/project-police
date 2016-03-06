@@ -249,15 +249,15 @@ class Project extends CI_Controller {
                     "pushed_date" => date("Y-m-d h:i:s", strtotime($decodeResponse->head_commit->timestamp)),
                     "projectid" => base64_decode($projectid)
                 );
-            $commitexists = $this->projects->checkCommitExists(base64_decode($projectid)); 
-            
+            $commitexists = $this->commits->checkCommitExists(base64_decode($projectid));
+
             if (is_array($commitexists) >0 && count($commitexists)>0) {
-                $this->projects->updateCommitInfo($commitInfo, (int)$commitexists[0]['id']); 
+                $this->commits->updateCommitInfo($commitInfo, (int)$commitexists[0]['id']);
             } else {
-                $this->projects->addCommit($commitInfo); 
+                $this->commits->addCommit($commitInfo);
             }
         }
-        
+
         $this->load->view('header', $setMsgValue);
         $this->load->view('Project/hook', array("hookurl" => $hookurl));
         $this->load->view('footer');
