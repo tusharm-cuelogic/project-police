@@ -92,153 +92,172 @@ class Project extends CI_Controller {
 
         // $jsonResponse = file_get_contents("php://input");
         $jsonResponse = '{
-            "ref": "refs/heads/master",
-            "before": "add45e783296f19cde7495e0d76a920bad14fd3f",
-            "after": "cc68127a5a1db2ab665c7e263dca1ba4a233d984",
-            "created": false,
-            "deleted": false,
-            "forced": false,
-            "base_ref": null,
-            "compare": "https://github.com/stambe/dummytext/compare/add45e783296...cc68127a5a1d",
-            "commits": [{
-                "id": "cc68127a5a1db2ab665c7e263dca1ba4a233d984",
-                "distinct": true,
-                "message": "Changed webhook and git.sh",
-                "timestamp": "2016-03-01T17:51:27+05:30",
-                "url": "https://github.com/stambe/dummytext/commit/cc68127a5a1db2ab665c7e263dca1ba4a233d984",
-                "author": {
-                    "name": "Sagar Tambe",
-                    "email": "sagar@cuelogic.co.in",
-                    "username": "stambe"
-                },
-                "committer": {
-                    "name": "Sagar Tambe",
-                    "email": "sagar@cuelogic.co.in",
-                    "username": "stambe"
-                },
-                "added": [],
-                "removed": [],
-                "modified": ["git.sh", "webhook.php"]
-            }],
-            "head_commit": {
-                "id": "cc68127a5a1db2ab665c7e263dca1ba4a233d984",
-                "distinct": true,
-                "message": "Changed webhook and git.sh",
-                "timestamp": "2016-03-01T17:51:27+05:30",
-                "url": "https://github.com/stambe/dummytext/commit/cc68127a5a1db2ab665c7e263dca1ba4a233d984",
-                "author": {
-                    "name": "Sagar Tambe",
-                    "email": "sagar@cuelogic.co.in",
-                    "username": "stambe"
-                },
-                "committer": {
-                    "name": "Sagar Tambe",
-                    "email": "sagar@cuelogic.co.in",
-                    "username": "stambe"
-                },
-                "added": [],
-                "removed": [],
-                "modified": ["git.sh", "webhook.php"]
-            },
-            "repository": {
-                "id": 52711711,
-                "name": "dummytext",
-                "full_name": "stambe/dummytext",
-                "owner": {
-                    "name": "stambe",
-                    "email": "sagar@cuelogic.co.in"
-                },
-                "private": false,
-                "html_url": "https://github.com/stambe/dummytext",
-                "description": "",
-                "fork": false,
-                "url": "https://github.com/stambe/dummytext",
-                "forks_url": "https://api.github.com/repos/stambe/dummytext/forks",
-                "keys_url": "https://api.github.com/repos/stambe/dummytext/keys{/key_id}",
-                "collaborators_url": "https://api.github.com/repos/stambe/dummytext/collaborators{/collaborator}",
-                "teams_url": "https://api.github.com/repos/stambe/dummytext/teams",
-                "hooks_url": "https://api.github.com/repos/stambe/dummytext/hooks",
-                "issue_events_url": "https://api.github.com/repos/stambe/dummytext/issues/events{/number}",
-                "events_url": "https://api.github.com/repos/stambe/dummytext/events",
-                "assignees_url": "https://api.github.com/repos/stambe/dummytext/assignees{/user}",
-                "branches_url": "https://api.github.com/repos/stambe/dummytext/branches{/branch}",
-                "tags_url": "https://api.github.com/repos/stambe/dummytext/tags",
-                "blobs_url": "https://api.github.com/repos/stambe/dummytext/git/blobs{/sha}",
-                "git_tags_url": "https://api.github.com/repos/stambe/dummytext/git/tags{/sha}",
-                "git_refs_url": "https://api.github.com/repos/stambe/dummytext/git/refs{/sha}",
-                "trees_url": "https://api.github.com/repos/stambe/dummytext/git/trees{/sha}",
-                "statuses_url": "https://api.github.com/repos/stambe/dummytext/statuses/{sha}",
-                "languages_url": "https://api.github.com/repos/stambe/dummytext/languages",
-                "stargazers_url": "https://api.github.com/repos/stambe/dummytext/stargazers",
-                "contributors_url": "https://api.github.com/repos/stambe/dummytext/contributors",
-                "subscribers_url": "https://api.github.com/repos/stambe/dummytext/subscribers",
-                "subscription_url": "https://api.github.com/repos/stambe/dummytext/subscription",
-                "commits_url": "https://api.github.com/repos/stambe/dummytext/commits{/sha}",
-                "git_commits_url": "https://api.github.com/repos/stambe/dummytext/git/commits{/sha}",
-                "comments_url": "https://api.github.com/repos/stambe/dummytext/comments{/number}",
-                "issue_comment_url": "https://api.github.com/repos/stambe/dummytext/issues/comments{/number}",
-                "contents_url": "https://api.github.com/repos/stambe/dummytext/contents/{+path}",
-                "compare_url": "https://api.github.com/repos/stambe/dummytext/compare/{base}...{head}",
-                "merges_url": "https://api.github.com/repos/stambe/dummytext/merges",
-                "archive_url": "https://api.github.com/repos/stambe/dummytext/{archive_format}{/ref}",
-                "downloads_url": "https://api.github.com/repos/stambe/dummytext/downloads",
-                "issues_url": "https://api.github.com/repos/stambe/dummytext/issues{/number}",
-                "pulls_url": "https://api.github.com/repos/stambe/dummytext/pulls{/number}",
-                "milestones_url": "https://api.github.com/repos/stambe/dummytext/milestones{/number}",
-                "notifications_url": "https://api.github.com/repos/stambe/dummytext/notifications{?since,all,participating}",
-                "labels_url": "https://api.github.com/repos/stambe/dummytext/labels{/name}",
-                "releases_url": "https://api.github.com/repos/stambe/dummytext/releases{/id}",
-                "deployments_url": "https://api.github.com/repos/stambe/dummytext/deployments",
-                "created_at": 1456647801,
-                "updated_at": "2016-03-01T11:40:57Z",
-                "pushed_at": 1456834903,
-                "git_url": "git://github.com/stambe/dummytext.git",
-                "ssh_url": "git@github.com:stambe/dummytext.git",
-                "clone_url": "https://github.com/stambe/dummytext.git",
-                "svn_url": "https://github.com/stambe/dummytext",
-                "homepage": null,
-                "size": 3,
-                "stargazers_count": 0,
-                "watchers_count": 0,
-                "language": "PHP",
-                "has_issues": true,
-                "has_downloads": true,
-                "has_wiki": true,
-                "has_pages": false,
-                "forks_count": 0,
-                "mirror_url": null,
-                "open_issues_count": 0,
-                "forks": 0,
-                "open_issues": 0,
-                "watchers": 0,
-                "default_branch": "master",
-                "stargazers": 0,
-                "master_branch": "master"
-            },
-            "pusher": {
-                "name": "stambe",
-                "email": "sagar@cuelogic.co.in"
-            },
-            "sender": {
-                "login": "stambe",
-                "id": 4905621,
-                "avatar_url": "https://avatars.githubusercontent.com/u/4905621?v=3",
-                "gravatar_id": "",
-                "url": "https://api.github.com/users/stambe",
-                "html_url": "https://github.com/stambe",
-                "followers_url": "https://api.github.com/users/stambe/followers",
-                "following_url": "https://api.github.com/users/stambe/following{/other_user}",
-                "gists_url": "https://api.github.com/users/stambe/gists{/gist_id}",
-                "starred_url": "https://api.github.com/users/stambe/starred{/owner}{/repo}",
-                "subscriptions_url": "https://api.github.com/users/stambe/subscriptions",
-                "organizations_url": "https://api.github.com/users/stambe/orgs",
-                "repos_url": "https://api.github.com/users/stambe/repos",
-                "events_url": "https://api.github.com/users/stambe/events{/privacy}",
-                "received_events_url": "https://api.github.com/users/stambe/received_events",
-                "type": "User",
-                "site_admin": false
+          "ref": "refs/heads/master",
+          "before": "3cb9a692f1c971a6b647b5899379a6914be16abc",
+          "after": "921aa43be5ec2ee8bf4b03f7eb6f87d63edf276a",
+          "created": false,
+          "deleted": false,
+          "forced": false,
+          "base_ref": null,
+          "compare": "https://github.com/tusharm-cuelogic/project-police/compare/3cb9a692f1c9...921aa43be5ec",
+          "commits": [
+            {
+              "id": "921aa43be5ec2ee8bf4b03f7eb6f87d63edf276a",
+              "distinct": true,
+              "message": "worked on to get commit info",
+              "timestamp": "2016-03-06T05:51:29+05:30",
+              "url": "https://github.com/tusharm-cuelogic/project-police/commit/921aa43be5ec2ee8bf4b03f7eb6f87d63edf276a",
+              "author": {
+                "name": "tusharm-cuelogic",
+                "email": "tushar.mate@cuelogic.co.in",
+                "username": "tusharm-cuelogic"
+              },
+              "committer": {
+                "name": "tusharm-cuelogic",
+                "email": "tushar.mate@cuelogic.co.in",
+                "username": "tusharm-cuelogic"
+              },
+              "added": [
+
+              ],
+              "removed": [
+
+              ],
+              "modified": [
+                "application/config/database.php",
+                "application/controllers/Project.php",
+                "application/models/projects.php"
+              ]
             }
+          ],
+          "head_commit": {
+            "id": "921aa43be5ec2ee8bf4b03f7eb6f87d63edf276a",
+            "distinct": true,
+            "message": "worked on to get commit info",
+            "timestamp": "2016-03-06T05:51:29+05:30",
+            "url": "https://github.com/tusharm-cuelogic/project-police/commit/921aa43be5ec2ee8bf4b03f7eb6f87d63edf276a",
+            "author": {
+              "name": "tusharm-cuelogic",
+              "email": "tushar.mate@cuelogic.co.in",
+              "username": "tusharm-cuelogic"
+            },
+            "committer": {
+              "name": "tusharm-cuelogic",
+              "email": "tushar.mate@cuelogic.co.in",
+              "username": "tusharm-cuelogic"
+            },
+            "added": [
+
+            ],
+            "removed": [
+
+            ],
+            "modified": [
+              "application/config/database.php",
+              "application/controllers/SearchController.php",
+              "application/models/Extract.php"
+            ]
+          },
+          "repository": {
+            "id": 53187032,
+            "name": "project-police",
+            "full_name": "tusharm-cuelogic/project-police",
+            "owner": {
+              "name": "tusharm-cuelogic",
+              "email": "tushar.mate@cuelogic.co.in"
+            },
+            "private": false,
+            "html_url": "https://github.com/tusharm-cuelogic/project-police",
+            "description": "",
+            "fork": false,
+            "url": "https://github.com/tusharm-cuelogic/project-police",
+            "forks_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/forks",
+            "keys_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/keys{/key_id}",
+            "collaborators_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/collaborators{/collaborator}",
+            "teams_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/teams",
+            "hooks_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/hooks",
+            "issue_events_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/issues/events{/number}",
+            "events_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/events",
+            "assignees_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/assignees{/user}",
+            "branches_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/branches{/branch}",
+            "tags_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/tags",
+            "blobs_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/git/blobs{/sha}",
+            "git_tags_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/git/tags{/sha}",
+            "git_refs_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/git/refs{/sha}",
+            "trees_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/git/trees{/sha}",
+            "statuses_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/statuses/{sha}",
+            "languages_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/languages",
+            "stargazers_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/stargazers",
+            "contributors_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/contributors",
+            "subscribers_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/subscribers",
+            "subscription_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/subscription",
+            "commits_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/commits{/sha}",
+            "git_commits_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/git/commits{/sha}",
+            "comments_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/comments{/number}",
+            "issue_comment_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/issues/comments{/number}",
+            "contents_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/contents/{+path}",
+            "compare_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/compare/{base}...{head}",
+            "merges_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/merges",
+            "archive_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/{archive_format}{/ref}",
+            "downloads_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/downloads",
+            "issues_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/issues{/number}",
+            "pulls_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/pulls{/number}",
+            "milestones_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/milestones{/number}",
+            "notifications_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/notifications{?since,all,participating}",
+            "labels_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/labels{/name}",
+            "releases_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/releases{/id}",
+            "deployments_url": "https://api.github.com/repos/tusharm-cuelogic/project-police/deployments",
+            "created_at": 1457158663,
+            "updated_at": "2016-03-05T14:46:32Z",
+            "pushed_at": 1457223712,
+            "git_url": "git://github.com/tusharm-cuelogic/project-police.git",
+            "ssh_url": "git@github.com:tusharm-cuelogic/project-police.git",
+            "clone_url": "https://github.com/tusharm-cuelogic/project-police.git",
+            "svn_url": "https://github.com/tusharm-cuelogic/project-police",
+            "homepage": null,
+            "size": 3514,
+            "stargazers_count": 0,
+            "watchers_count": 0,
+            "language": "HTML",
+            "has_issues": true,
+            "has_downloads": true,
+            "has_wiki": true,
+            "has_pages": false,
+            "forks_count": 0,
+            "mirror_url": null,
+            "open_issues_count": 0,
+            "forks": 0,
+            "open_issues": 0,
+            "watchers": 0,
+            "default_branch": "master",
+            "stargazers": 0,
+            "master_branch": "master"
+          },
+          "pusher": {
+            "name": "tusharm-cuelogic",
+            "email": "tushar.mate@cuelogic.co.in"
+          },
+          "sender": {
+            "login": "tusharm-cuelogic",
+            "id": 5966593,
+            "avatar_url": "https://avatars.githubusercontent.com/u/5966593?v=3",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/tusharm-cuelogic",
+            "html_url": "https://github.com/tusharm-cuelogic",
+            "followers_url": "https://api.github.com/users/tusharm-cuelogic/followers",
+            "following_url": "https://api.github.com/users/tusharm-cuelogic/following{/other_user}",
+            "gists_url": "https://api.github.com/users/tusharm-cuelogic/gists{/gist_id}",
+            "starred_url": "https://api.github.com/users/tusharm-cuelogic/starred{/owner}{/repo}",
+            "subscriptions_url": "https://api.github.com/users/tusharm-cuelogic/subscriptions",
+            "organizations_url": "https://api.github.com/users/tusharm-cuelogic/orgs",
+            "repos_url": "https://api.github.com/users/tusharm-cuelogic/repos",
+            "events_url": "https://api.github.com/users/tusharm-cuelogic/events{/privacy}",
+            "received_events_url": "https://api.github.com/users/tusharm-cuelogic/received_events",
+            "type": "User",
+            "site_admin": false
+          }
         }';
+
         if ($jsonResponse) {
 
             $decodeResponse = json_decode($jsonResponse);
@@ -256,10 +275,64 @@ class Project extends CI_Controller {
             } else {
                 $this->projects->addCommit($commitInfo); 
             }
+
+            $addedFiles = $decodeResponse->head_commit->added;
+            $modifiedFiles = $decodeResponse->head_commit->modified;
+
+            if(is_array($addedFiles) && count($addedFiles)>0) {
+                foreach($addedFiles as $addedfilesname) {
+                    if (strstr($addedfilesname, "controllers") || strstr($addedfilesname, "models") || strstr($addedfilesname, "helpers")) {
+                        $this->curlRequest($modifiedfilesname);
+                    }
+                }
+            }
+
+            if(is_array($modifiedFiles) && count($modifiedFiles)>0) {
+                foreach($modifiedFiles as $modifiedfilesname) {
+
+                    if (strstr($modifiedfilesname, "controllers") || strstr($modifiedfilesname, "models") || strstr($modifiedfilesname, "helpers")) {
+                        $this->curlRequest($modifiedfilesname);
+                    } 
+                }
+            }
         }
         
         $this->load->view('header', $setMsgValue);
         $this->load->view('Project/hook', array("hookurl" => $hookurl));
         $this->load->view('footer');
+    }
+
+    function curlRequest($modifiedfilesname) {
+        
+        $this->load->model('projects');
+
+        if((int)base64_decode($this->input->get()['id']) > 0) {
+            $projectinfo = $this->projects->info();
+        }
+
+        $repoUrl = "repository/".str_replace(" ", "-", $projectinfo[0]['project_name'])."/".$projectinfo[0]['repository_name']."/";
+
+        $url = BASE_URL."/Codereview";
+        //open connection
+        $ch = curl_init();
+
+        //set the url, number of POST vars, POST data
+        curl_setopt($ch,CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_HEADER, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+
+        $data = array(
+            'file_path' => $repoUrl.$modifiedfilesname,
+            ''
+        );
+
+        curl_setopt($ch,CURLOPT_POSTFIELDS, http_build_query($data));
+
+        //execute post
+        $result = curl_exec($ch);
+        print $result;
+        //close connection
+        curl_close($ch);
     }
 }
