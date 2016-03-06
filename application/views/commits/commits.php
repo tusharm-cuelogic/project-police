@@ -17,7 +17,7 @@
         <tr>
             <td class="toggle-details">
                 <div><?php echo $commit['pushid']; ?></div>
-                <div class="details" style="display: ;"><span>Duplicate <i>( <?php echo $commit['duplicate_count']; ?> )</i></span> <span>Queires <i>( <?php echo $commit['query_count']; ?> )</i></span><span>Wrong use of action <i>( <?php echo $commit['wrong_action']; ?> )</i></span><span> Unwanted methods in module <i>( <?php echo $commit['unwanted_module']; ?> )</i></span></div>
+                <div class="details" style="display: ;"><span>Duplicate <i>( <?php echo ($commit['duplicate_count']) ? $commit['duplicate_count'] : 0; ?> )</i></span> <span>Queires <i>( <?php echo ($commit['query_count']) ? $commit['query_count'] : 0; ?> )</i></span><span>Wrong use of action <i>( <?php echo ($commit['wrong_action']) ? $commit['wrong_action'] : 0; ?> )</i></span><span> Unwanted methods in module <i>( <?php echo ($commit['unwanted_module']) ? $commit['unwanted_module'] : 0; ?> )</i></span></div>
             </td>
             <td><?php echo $commit['username']; ?></td>
             <td><?php echo ($commit['issue_count']) ? $commit['issue_count'] : 0; ?></td>

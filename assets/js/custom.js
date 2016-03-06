@@ -6,7 +6,7 @@ $(document).ready(function() {
         loginLayout();
     });
     $(".commit-table .toggle-details").each(function() {
-        $(this).click(function(){
+        $(this).click(function() {
             $(this).find('.details').slideToggle('fast');
         });
     });
@@ -21,18 +21,24 @@ function loginLayout() {
     $('.login-wrap').css('top', bodyH / 2);
     $('.login-wrap').css('margin-top', loginWrapH / 2);
 }
-function gitRepoCheck(){
+
+function gitRepoCheck() {
+    if ($('#private').is(':checked')) {
+        $('.private-checked').fadeIn();
+    }
+
     $('#private').click(function() {
-        if($(this).is(':checked')){
+        if ($(this).is(':checked')) {
             $('.private-checked').fadeIn();
         }
     });
     $('#public').click(function() {
-        if($(this).is(':checked')){
+        if ($(this).is(':checked')) {
             $('.private-checked').fadeOut();
         }
     });
 }
-function headerAlert(){
-    $(".header-message-wrap").animate({top:"50px"},500).delay(4000).animate({top:"20px"},500);
+
+function headerAlert() {
+    $(".header-message-wrap").animate({ top: "50px" }, 500).delay(4000).animate({ top: "20px" }, 500);
 }

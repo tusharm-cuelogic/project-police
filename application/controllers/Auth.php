@@ -3,6 +3,13 @@
 class Auth extends CI_Controller {
 
 	public function login() {
+        /**
+         * Check value is set or not if not then redirect to login page
+         */
+        if ((int)$this->session->userdata('user')['id'] > 0) {
+            redirect(base_url('Dashboard/home'));
+        }
+
         $setMsgValue = array();
         $setMsgValue['alertDanger'] = '';
         $setMsgValue['msg'] = '';

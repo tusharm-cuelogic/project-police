@@ -4,6 +4,13 @@ class Dashboard extends CI_Controller {
 
 	public function home()
 	{
+        /**
+         * Check value is set or not if not then redirect to login page
+         */
+        if (!(int)$this->session->userdata('user')['id'] > 0) {
+            redirect(base_url('Auth/login'));
+        }
+
         $arrSetData = array();
         $setMsgValue = array();
         $setMsgValue['alertDanger'] = '';
@@ -32,8 +39,14 @@ class Dashboard extends CI_Controller {
         $this->load->view('footer');
 	}
 
-    public function commits()
-    {
+    public function commits() {
+        /**
+         * Check value is set or not if not then redirect to login page
+         */
+        if (!(int)$this->session->userdata('user')['id'] > 0) {
+            redirect(base_url('Auth/login'));
+        }
+
         $arrSetData = array();
         $setMsgValue = array();
         $setMsgValue['alertDanger'] = '';

@@ -3,6 +3,13 @@
 class Project extends CI_Controller {
 
 	public function view() {
+        /**
+         * Check value is set or not if not then redirect to login page
+         */
+        if (!(int)$this->session->userdata('user')['id'] > 0) {
+            redirect(base_url('Auth/login'));
+        }
+
         $arrSetData = array();
         $setMsgValue = array();
         $setMsgValue['alertDanger'] = '';
@@ -26,6 +33,9 @@ class Project extends CI_Controller {
         $setMsgValue['alertDanger'] = '';
         $setMsgValue['msg'] = '';
 
+        /**
+         * Check value is set or not if not then redirect to login page
+         */
         if (!(int)$this->session->userdata('user')['id'] > 0) {
             redirect(base_url('Auth/login'));
         }
@@ -60,6 +70,13 @@ class Project extends CI_Controller {
     }
 
     public function gitclone() {
+        /**
+         * Check value is set or not if not then redirect to login page
+         */
+        if (!(int)$this->session->userdata('user')['id'] > 0) {
+            redirect(base_url('Auth/login'));
+        }
+
         $post = $this->input->post();
 
         $project_name = str_replace(" ", "-", $post['project_name']);
@@ -81,11 +98,18 @@ class Project extends CI_Controller {
     }
 
     public function hook() {
+        /**
+         * Check value is set or not if not then redirect to login page
+         */
+        if (!(int)$this->session->userdata('user')['id'] > 0) {
+            redirect(base_url('Auth/login'));
+        }
 
         $setMsgValue = array();
         $setMsgValue['alertDanger'] = '';
         $setMsgValue['msg'] = '';
 
+        $this->load->model('commits');
         $this->load->model('projects');
         $projectid = $this->input->get()['id'];
         $hookurl = BASE_URL."/".$projectid;
