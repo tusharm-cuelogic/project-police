@@ -19,7 +19,7 @@ class Codereview extends CI_Controller {
         
         // $duplicateResponse = $this->symphony->validateDuplicate(array('file_type' => 'duplicate_code', 'file_path' => $filePath['file_path']));
 
-        print $modelResponse."<br>";
-        print $controllerResponse."<br>";
+        $output = array($modelResponse, $controllerResponse);
+        print json_encode($output);
 	}
 }

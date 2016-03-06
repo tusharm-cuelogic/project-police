@@ -355,7 +355,11 @@ class Project extends CI_Controller {
 
         //execute post
         $result = curl_exec($ch);
-        print $result;
+        
+        if($result) {
+            
+            $this->projects->updateCommitInfo($result);
+        } 
         //close connection
         curl_close($ch);
     }

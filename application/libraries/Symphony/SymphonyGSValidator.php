@@ -1,51 +1,36 @@
-#!/usr/bin/php5
 <?PHP
 ini_set(error_reporting,E_ALL);
 ini_set("display_errors",1);
 
-class myParent {
-  function parentFunc() {
-    echo "Parent Function Output\n";
-  }
+$script_path = $argv[1];
+$class = $argv[2];
+
+// $script_path = "../Extract.php";
+// $class = "Extract";
+
+include $script_path;
+
+class SymphonyGSValidator {
+
+	public function __construct(){
+	}
+
+	public function validate($class_name){
+		$class = new $class_name();
+		$class_methods = get_class_methods($class);
+		$class_vars = get_class_vars($class_name);
+
+		$class_methods_count = (int)count($class_methods);
+		$class_vars_count = (int)count($class_vars) * 2;
+
+		if ($class_vars_count == $class_methods_count)
+			print "";
+		else
+			print "Module $class_name has unwanted methods.";
+	}
 }
 
-class myChild {
-}
-
-print 1;
-
-runkit_class_adopt('myChild','myParent');
-print 2;
-$mychilde = new myChild();
-$mychilde->parentFunc();
-
-// $script_path = $argv[1];
-// print $class = $argv[2];
-
-// // $script_path = "../Extract.php";
-// // $class = "Extract";
-
-// include $script_path;
-
-// class SymphonyGSValidator {
-
-// 	public function __construct(){
-// 	}
-
-// 	public function validate($class_name){
-// 		$class = new $class_name();
-// 		$class_methods = get_class_methods($class);
-// 		$class_vars = get_class_vars($class_name);
-
-// 		print count($class_vars);
-
-// 		print ((count($class_vars) * 2) == count($class_methods)) ? "" : "Module $class has unwanted methods.";
-// 	}
-// }
-
-// print "1";
-// runkit_class_adopt('SymphonyGSValidator',$class);
-// print "2";
-// $validator = new SymphonyGSValidator();
-// $validator->validate($class);
+runkit_class_adopt('SymphonyGSValidator',$class);
+$validator = new SymphonyGSValidator();
+$validator->validate($class);
 ?>

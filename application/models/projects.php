@@ -103,4 +103,29 @@ class Projects extends CI_Model {
         }
     }
 
+    function updateCommitInfo($result) {
+        
+        $resultResponse = json_decode($result);
+        
+        $projectid = (int)base64_decode($this->input->get()['id']);
+        $modelResponse = json_decode($resultResponse[0]);
+        $contorllerResponse = json_decode($resultResponse[1]);
+
+        $updateData = array(
+                "wrong_action" => (int)$contorllerResponse->duplicate_return,
+                "query_count" => (int)$contorllerResponse->queries_in_controller,
+                "unwanted_module" => (int)$contorllerResponse->queries_in_controller,
+            );
+        
+        $query = $this->db->update_string(
+            'commits', $arrSetValue,
+            "projectid = '$projectid'");
+        $result = $this->db->query($query);
+
+        $query = $this->db->update_string(
+            'project', $arrSetValue,
+            "id = '$projectid'");
+        $result = $this->db->query($query);
+    }
+
 }

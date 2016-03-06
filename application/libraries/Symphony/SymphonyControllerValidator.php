@@ -19,10 +19,10 @@ class SymphonyControllerValidator {
 
 		$result = array();
 		if($duplicateReturnStatements > 0){
-			$result["duplicate-return"] = "Functions has code to render HTML as well as returning JSON. Occurrence: " . ($duplicateReturnStatements / 2);
+			$result["duplicate_return"] = ($duplicateReturnStatements / 2);
 		}
 		if($queriesStatements > 0){
-			$result["queries-in-controller"] = "Code has MySQL queries in controller. Occurrence: " . $queriesStatements;
+			$result["queries_in_controller"] = $queriesStatements;
 		}
 
 		return (count($result) == 0) ? "" : json_encode($result);
